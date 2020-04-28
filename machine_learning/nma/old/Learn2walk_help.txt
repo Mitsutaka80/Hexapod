@@ -1,0 +1,73 @@
+
+
+#print test.index(max(index))
+plt.plot(robot_new['t'][n:-n],test)
+lam = 100000
+plt.ylim([-lam,lam])
+plt.show()
+#print servo_new
+numServos = len(servo_data.keys())-1
+#print numServos
+eigendict = {}
+#for t in range(len(robot_new['t']))[1:-1]:
+#    H = np.zeros((numServos,numServos))
+#    for i in range(len(H)):
+#        for j in range(len(H[i])):
+#            try: 
+#                d1 = (robot_data['x'][t]-robot_data['x'][t-1])/(servo_data[str(i)][t]-servo_data[str(i)][t-1])
+#                d2 = (robot_data['x'][t+1]-robot_data['x'][t])/(servo_data[str(i)][t+1]-servo_data[str(i)][t])
+#                dx = (servo_data[str(j)][t+1]-servo_data[str(j)][t-1])/2
+#                H[i][j] = (d2-d1)/dx
+#            except:
+#                H[i][j] = 10000000000
+#    if 10000000000 not in H:
+#        H = np.asmatrix(H)
+#        eigenvals,eigenvects = np.linalg.eig(H)
+#        for eig in range(len(eigenvals)):
+#            if not np.iscomplex(eigenvals[eig]) and not np.iscomplex(eigenvects[eig]).any():
+#                #if not np.iscomplex(eigenvects[eig]).any():
+#                eigendict[str(eigenvals[eig].real)] = eigenvects[eig].real
+#        #print eigenvals,eigenvects
+#        #eigenval_list.append(eigenvals)
+#eigenval_list = np.transpose(np.asarray(eigenval_list))
+#print eigenval_list
+
+#max_eigenval = max(map(float,eigendict.keys()))
+#min_eigenval = min(map(float,eigendict.keys()))
+#print max_eigenval,min_eigenval
+#print eigendict[str(max_eigenval)],eigendict[str(min_eigenval)]
+
+#mean_eigen = []
+#for ei in eigenval_list:
+#    mean_eigen.append(sum(ei)/len(ei))
+#    plt.plot(range(len(ei)),ei)
+#print mean_eigen
+##plt.ylim(-0.1,0.1)
+#plt.show()
+
+###################
+#test = []
+#for i in range(len(servo_data['t'])):
+#    val = 0
+#    for key in servo_data.keys():
+#        if key!='t':
+#            val+=servo_data[key][i]
+#    test.append(val)
+##robot_vel = differentiate(robot_data)
+##servo_vel = differentiate(servo_data)
+##robot_acc = differentiate(robot_vel)
+##servo_acc = differentiate(servo_vel)
+##print robot_acc 
+##print servo_acc 
+#ax1 = plt.subplot()
+#ax2 = ax1.twinx()
+##ax1.plot(robot_data['t'],robot_data['x'],'b-')
+#ax1.plot(robot_new['t'],robot_new['x'],'b-')
+##ax2.plot(servo_new['t'],servo_new['3'],'g-')
+##ax2.plot(servo_data['t'],test,'r-')
+#ax2.plot(servo_data['t'],servo_data['3'],'r-')
+#plt.show()
+#def find_percentile(alist,percent):
+#    val = sorted(alist)[int(percent*len(alist))]
+#    return val
+##find_percentile(robot_acc['x'],0.75)
