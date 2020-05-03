@@ -2,7 +2,7 @@ import csv
 import math
 
 def createXYangT(camera_data):
-    f = open(camera_data,'r')
+    f = open(camera_data,'rb')
     reader = csv.reader(f)
     csv_list = []
     csv_dict = {}
