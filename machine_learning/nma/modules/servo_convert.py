@@ -1,7 +1,7 @@
 import csv
 
 def create_servo_dict(servo_csv):
-    f = open(servo_csv,'rb')
+    f = open(servo_csv,'r')
     reader = csv.reader(f)
     comp = {}
     first = 1
@@ -20,3 +20,5 @@ def create_servo_dict(servo_csv):
 
     f.close()
     return comp
+
+#print (create_servo_dict('nma_first.csv'))

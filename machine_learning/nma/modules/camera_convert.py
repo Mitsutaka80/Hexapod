@@ -2,7 +2,7 @@ import csv
 import math
 
 def createXYangT(camera_data):
-    f = open(camera_data,'rb')
+    f = open(camera_data,'r')
     reader = csv.reader(f)
     csv_list = []
     csv_dict = {}
@@ -73,3 +73,5 @@ def createXYangT(camera_data):
     for i in range(len(XYangT['x'])):
         new.write(str(XYangT['t'][i])+', '+str(XYangT['x'][i])+', '+str(XYangT['y'][i])+', '+str(XYangT['ang'][i])+'\n')
     new.close()
+
+#print (createXYangT('camera_nma_first.csv'))

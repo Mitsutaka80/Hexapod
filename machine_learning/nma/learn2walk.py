@@ -18,13 +18,14 @@ def differentiate(fx):
                 fxd['t'].append((fx['t'][i]+fx['t'][i-1])/2)
     return fxd
 
+#robot_new = extrapolate(servo_data,robot_data)
 def extrapolate(dict1,dict2ex):
     new_dict = {}
     for key in dict2ex.keys():
         if key!='t':
             new_dict[key]=[dict2ex[key][0]]
     for i in range(len(dict1['t']))[1:]:
-        compare = range(len(dict2ex['t']))
+        compare = range(len(dict2ex['t'])) 
         for j in range(len(dict2ex['t'])):
             compare[j] = abs(dict1['t'][i]-dict2ex['t'][j])
         closest = compare.index(min(compare))
