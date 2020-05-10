@@ -25,7 +25,7 @@ def extrapolate(dict1,dict2ex):
         if key!='t':
             new_dict[key]=[dict2ex[key][0]]
     for i in range(len(dict1['t']))[1:]:
-        compare = range(len(dict2ex['t'])) 
+        compare = list(range(len(dict2ex['t'])))
         for j in range(len(dict2ex['t'])):
             compare[j] = abs(dict1['t'][i]-dict2ex['t'][j])
         closest = compare.index(min(compare))
@@ -148,7 +148,7 @@ for to in to_h:
             #print eigenvec[key]
             #TIMEstep = 100
             y0 = servo_data[str(key)][eigen_loc]
-            y1 = round(eigenvec[key]*TIMEstep+y0,0)
+            y1 = round((eigenvec[key]*TIMEstep+y0)[0, 0],0) 
             #print y0,y1
             #print servo_data['t'][eigen_loc+x1]-servo_data['t'][eigen_loc]
             timestep = 1
@@ -165,18 +165,17 @@ for to in to_h:
             pass
 
 #print servo_traj
-for key,val in servo_traj.iteritems():
+for key,val in servo_traj.items():
     if len(val)!=0:
-        for KEY,VAL in val.iteritems():
+        for KEY,VAL in val.items():
             if len(VAL)!=0:
                 val[KEY] = sum(VAL)/len(VAL)
 #print servo_traj
-for key, val in servo_traj.iteritems():
+for key, val in servo_traj.items():
     if val['period'] == []:
         servo_traj[key]['period'] = 0
         servo_traj[key]['shift'] = 0
         
-
 f = open('period_shift.h','w')
 f.write('#ifndef period_shift_h\n#define period_shift_h\nextern int periods[];\nextern float shifts[];\nconst int numServos = '+str(numServos)+';\n#endif')
 f.close()
